@@ -1,0 +1,44 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+
+    <h1>Noticias</h1>
+
+    <ul>
+        {% for noticia in noticias %}
+            <div class="noticia">
+
+                <div class="noticia-content">
+                    <h2>{{ noticia[1] }}</h2>
+                    <p>{{ noticia[2][:100] }}...</p>
+                    <a href="{{ url_for('noticia', noticia_id=noticia[0]) }}">Ver más</a>
+                    <p>{{ noticia[3] }}</p>
+
+                </div>
+                <div class="noticia-image">
+                    <img src="{{ url_for('static', filename='imagenes_de_noticias/' + noticia[4]) }}" alt="{{ noticia.titulo }}" style="width: 300px;">
+                </div>
+            </div>
+        {% endfor %}
+    </ul>
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

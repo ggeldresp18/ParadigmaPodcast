@@ -1,0 +1,25 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h1 class="texto">Podcasts </h1>
+  <div class="row">
+    {% for podcast in podcasts %}
+    <div class="col-md-6">
+      <div class="podcast">
+          <h2>{{ podcast[1] }}</h2>
+          <p>{{ podcast[2] }}</p>
+          <a href="{{ podcast[3] }}">
+              <img src="{{ url_for('static', filename='imagenes_de_podcasts/' + podcast[5]) }}" alt="Imagen del podcast" class="img-fluid">
+          </a>
+          <p>Fecha: {{ podcast[4] }}</p>
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+{% endblock %}
+
+
+
+
+
+

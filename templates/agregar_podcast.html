@@ -1,0 +1,23 @@
+{% extends 'layout.html' %}
+
+{% block content %}
+  <h1>Agregar podcast</h1>
+  <form method="POST" action="/agregar_podcast" enctype="multipart/form-data">
+    <label for="titulo">Título:</label><br>
+    <input type="text" id="titulo" name="titulo" required><br>
+
+    <label for="descripcion">Descripción:</label><br>
+    <textarea id="descripcion" name="descripcion" required></textarea><br>
+
+    <label for="fecha">Fecha:</label><br>
+    <input type="date" id="fecha" name="fecha" required><br>
+
+    <label for="enlace">Enlace:</label><br>
+    <input type="url" id="enlace" name="enlace" required><br>
+
+    <label for="imagen">Imagen:</label><br>
+    <input type="file" id="imagen" name="imagen"><br>
+
+    <input type="submit" value="Agregar podcast">
+  </form>
+{% endblock %}
